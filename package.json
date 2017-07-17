@@ -1,0 +1,8 @@
+{
+  "name": "styled-logs",
+  "version": "0.1.0",
+  "description": "Easily create styled console statements with css and modern JavaScript",
+  "main": "index.js",
+  "author": "Justin Wilkerson @gojutin",
+  "license": "MIT"
+}
