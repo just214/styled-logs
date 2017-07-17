@@ -74,7 +74,7 @@ const reconstruct = (strings, values) => {
 
 
 // 11
-export default styled;
+module.exports =  styled;
 
 
 

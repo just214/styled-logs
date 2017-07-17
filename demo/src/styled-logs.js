@@ -30,4 +30,4 @@ const reconstruct = (strings, values) => {
   return messageArray.join("");
 };
 
-export default styled;
+module.exports =  styled;
