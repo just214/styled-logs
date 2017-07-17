@@ -32,7 +32,7 @@ const Header = _=>
     <br />
     <ButtonOutline 
       is="a" 
-      href="http://github.com/user/gojutin/" 
+      href="https://github.com/gojutin/styled-logs" 
       target="_blank"
       children="GitHub" 
     />	&nbsp;

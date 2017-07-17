@@ -26,13 +26,12 @@ inspired by  <a href="https://www.styled-components.com/" target="_blank"><img
 yarn
 $ yarn add styled-logs
 
-npm five
+npm5
 $ npm install styled-logs
 
-npm pre-five
+npm<5
 $ npm install --save styled-logs
 ```
-
 
 <h2 id="basic">Basic Usage</h2>
 
@@ -45,8 +44,9 @@ import styled from 'styled-logs';
 const log = styled.log`
   color: purple;
   font-size: 3em;
-  background: slate;
-  border: 2px solid yellow;
+  background: yellow;
+  border: 2px solid purple;
+  padding: 5px;
 `;
 
 // Now use your new styled-logs method
