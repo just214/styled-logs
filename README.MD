@@ -19,6 +19,8 @@ inspired by  <a href="https://www.styled-components.com/" target="_blank"><img
 - [Syntax Highlighting](#syntax)
 - [Tagged Template Literals](#ttl)
 - [Run the demo locally](#demo)
+- [Disclaimer](#disclaimer)
+- [Roadmap](#roadmap)
 
 <h2 id="getting-started">Getting Started</h2>
 
@@ -202,7 +204,7 @@ Open your browser and visit `http://localhost:3000`
  
  Due to the limitations outlined above, results may vary. 
  
- ## Roadmap
+ <h2 id="roadmap">Roadmap</h2>
  
  Below is a list of ideas and plans for future releases. 
  
@@ -215,4 +217,4 @@ Open your browser and visit `http://localhost:3000`
 If you would like to contribute or have a comment / suggestion, I'd love to chat.
 
 
-Made with <3 by a vegan. 
+Made with :green_heart: by a vegan. 
