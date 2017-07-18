@@ -1,3 +1,4 @@
+
 <h1><img height=50 src="https://drive.google.com/uc?id=0B55pP6B9y0d9TWdONXhHY1E3NUk"/> 
 styled-logs
 </h1>
@@ -8,7 +9,7 @@ styled-logs
 
 inspired by  <a href="https://www.styled-components.com/" target="_blank"><img src="https://raw.githubusercontent.com/styled-components/brand/master/styled-components.png" height=75/></a>
  
- #### [Try the online demo!](http://styled-logs.surge.sh)
+ ### [Try the online demo!](http://styled-logs.surge.sh)
  
 ## table of contents
 
@@ -215,6 +216,5 @@ Open your browser and visit `http://localhost:3000`
 - tests
 
 If you would like to contribute or have a comment / suggestion, I'd love to chat.
-
 
 Made with :green_heart: by a vegan. 
