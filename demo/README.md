@@ -1,10 +1,10 @@
-<h1><img height=50 src="https://drive.google.com/uc?id=0B55pP6B9y0d9TWdONXhHY1E3NUk"/> 
-styled-logs demo
-</h1>
+<span><h1><img height=50 src="https://drive.google.com/uc?id=0B55pP6B9y0d9TWdONXhHY1E3NUk"/> 
+styled-logs</h1>
+</span>
 
 #### Styled console statements with CSS and modern JavaScript
  
- #### [Try the online demo!](http://styled-logs.surge.sh)
+ #### [Try the interactive demo!](http://styled-logs.surge.sh)
 
 ### This demo was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 

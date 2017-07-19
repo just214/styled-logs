@@ -8,10 +8,6 @@ body {
   min-width: 100%;
 }
 
-input, select {
-  background: white !important;
-}
-
 button, button:focus, button:active, button:hover, button:visited {
   outline:0 !important;
 }

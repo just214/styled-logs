@@ -1,11 +1,10 @@
 import React from 'react';
 import SyntaxHighlighter, { registerLanguage } from "react-syntax-highlighter/dist/light"
 import js from 'react-syntax-highlighter/dist/languages/javascript';
-import docco from 'react-syntax-highlighter/dist/styles/docco'; 
+import irBlack from 'react-syntax-highlighter/dist/styles/ir-black'; 
 import styled from 'styled-components';
 
 const CodeWrapper = styled.div`
-  margin: 10px;
   text-align: left;
   height: auto;
   scroll: auto;
@@ -17,7 +16,7 @@ const CodeExample = ({code})=>
   <CodeWrapper>
     <SyntaxHighlighter 
       language='javascript' 
-      style={docco}
+      style={irBlack}
     >{code}</SyntaxHighlighter>
 </CodeWrapper>
 

@@ -1,15 +1,18 @@
-
-<h1><img height=50 src="https://drive.google.com/uc?id=0B55pP6B9y0d9TWdONXhHY1E3NUk"/> 
-styled-logs
-</h1>
-
+[//]: # (header)
+<span><h1><img height=40 src="https://drive.google.com/uc?id=0B55pP6B9y0d9TWdONXhHY1E3NUk"/> 
+styled-logs</h1>
+</span>
+[//]: # (header)
 #### Styled console statements with CSS and modern JavaScript
 
 ~25 lines of JavaScript and 0 dependencies
 
 inspired by  <a href="https://www.styled-components.com/" target="_blank"><img src="https://raw.githubusercontent.com/styled-components/brand/master/styled-components.png" height=75/></a>
  
- ### [Try the online demo!](http://styled-logs.surge.sh)
+ <h4><a href="http://styled-logs.surge.sh" target="_blank">
+Try the online demo!
+</a>
+</h4>
  
 ## table of contents
 
@@ -199,7 +202,7 @@ Open your browser and visit `http://localhost:3000`
 
  <h2 id="disclaimer">Disclaimer (please read)</h2>
  
- <h4 style="color: red;">Not recommended for production use at this time. </h4>
+ <h4>Please use with caution.</h4>
  
  This library is brand new and has not been exhaustively tested. At this time, it in unknown which browsers support styled console statements, but they appear to work in newer versions of Chome and FireFox.
  
@@ -209,8 +212,8 @@ Open your browser and visit `http://localhost:3000`
  
  Below is a list of ideas and plans for future releases. 
  
-- style various portions of a console statement individually in one method call
-- possible integration with logging libraries like Morgan
+- style various portions of a console statement individually in the same tagged template literal
+- compatibility with logging libraries
 - extensive list of supported styles and browsers
 - more examples in the interactive demo
 - tests

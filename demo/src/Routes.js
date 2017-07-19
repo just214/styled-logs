@@ -11,20 +11,14 @@ import Header from './components/Header';
 import Demo from './components/Demo';
 import AnnotatedSource from './components/AnnotatedSource';
 
-const Container = styled.div`
-  margin: 20px;
-`;
-
 const StyledRoutes = styled.div`
-  background: #333;
-  color: white;
-  border-radius: 10px;
+  background: #FFF;
+  color: #333;
   padding: 10px;
   height: auto;
 `;
 
 const Routes = _=> 
-<Container>
   <Router>
     <div>
      <Header />
@@ -37,6 +31,5 @@ const Routes = _=>
     </Switch>
     </div>
   </Router>
-</Container>
 
 export default Routes;
