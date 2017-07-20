@@ -1,4 +1,3 @@
-
 <span><h1><img height=40 src="https://drive.google.com/uc?id=0B55pP6B9y0d9TWdONXhHY1E3NUk"/> 
 styled-logs</h1>
 </span>
