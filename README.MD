@@ -1,16 +1,16 @@
-[//]: # (header)
+
 <span><h1><img height=40 src="https://drive.google.com/uc?id=0B55pP6B9y0d9TWdONXhHY1E3NUk"/> 
 styled-logs</h1>
 </span>
-[//]: # (header)
-#### Styled console statements with CSS and modern JavaScript
+
+#### Styled console.logs with modern JavaScript
 
 ~25 lines of JavaScript and 0 dependencies
 
 inspired by  <a href="https://www.styled-components.com/" target="_blank"><img src="https://raw.githubusercontent.com/styled-components/brand/master/styled-components.png" height=75/></a>
  
  <h4><a href="http://styled-logs.surge.sh" target="_blank">
-Try the online demo!
+Try the interactive demo!
 </a>
 </h4>
  

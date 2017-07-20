@@ -2,7 +2,7 @@
 styled-logs</h1>
 </span>
 
-#### Styled console statements with CSS and modern JavaScript
+#### Styled console.logs with modern JavaScript
  
  #### [Try the interactive demo!](http://styled-logs.surge.sh)
 

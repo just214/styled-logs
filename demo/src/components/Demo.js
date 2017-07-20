@@ -13,6 +13,23 @@ const CopyButton = styled.span`
   padding-left: 10px;
 `;
 
+const StyledInput = styled(Input)`
+  width: 220px;
+  font-size: 20px;
+  color: #333;
+`;
+
+const StyledSelect = styled(Select)`
+  width: 200px;
+  font-size: 16px;
+  color: #333;
+`;
+
+const StyledLogButtonOutline = styled(ButtonOutline)`
+  line-height: 20px;
+  width: 100px;
+  cursor: pointer;
+`;
 
 const selectOptions = [];
 Object.keys(samples).forEach(key => selectOptions.push(key));
@@ -20,7 +37,7 @@ selectOptions.sort();
 
 class Demo extends Component {
   state = {
-    inputValue: "type anything here",
+    inputValue: "say something",
     selectSample: "rainbow",
     copiedMessage: "",
   }
@@ -40,7 +57,7 @@ class Demo extends Component {
 
   copy = (code) => {
     this.setState({
-      copiedMessage: copy(code) ? "copied!" : "could not copy",
+      copiedMessage: copy(code) ? "copied!" : "could not copy :(",
     }, () => {
       window.setTimeout(() => {
         this.setState({
@@ -73,34 +90,38 @@ const codeSample = `
           <Flex justify="center">
             <Box width={[1/2, 1/4, 1/8]}>
               <Small>Choose a sample</Small>
-              <Select 
-                style={{color: "#333"}}
+              <StyledSelect 
                 value={this.state.selectSample}
                 onChange={e => this.setState({selectSample: e.target.value})} 
                 >
                 {
                   selectOptions.map(o => <option value={o} key={o}>{o}</option> )
                 }
-              </Select>
+              </StyledSelect>
             </Box>
           </Flex>
-          <h1 style={{color: "#e425e2", margin: 5}}>log`
-          <Input 
-            style={{width: 240 + "px", fontSize: 20 + "px", color: "#333"}} 
+          <h1 style={{color: "#e425e2", margin: 5 + "px"}}>log`
+          <StyledInput
             onChange={e => this.setState({inputValue: e.target.value})}
             value={this.state.inputValue}
+            placeholder="say something"
           />
           `</h1>
-          <Small>Be sure to open the developer console to see the output.</Small>
+          <p>Open the developer console, hit the button below and see a styled console.log!</p>
           <br />
-          <br />
-          <ButtonOutline type="submit" children="log" style={{cursor: "pointer"}}/>
+          <StyledLogButtonOutline type="submit" children="log"/>
           <br />
         </form>
         <CopyButton onClick={() => this.copy(codeSample)}>
           <FaCopy /> &nbsp; { this.state.copiedMessage }
         </CopyButton>
         <CodeExample code={codeSample} copy={copy} />
+        <h2 
+          style={{textAlign: "center", color: "#333"}}
+        >
+          Create and extend styled console methods. Make them dynamic with expressions. Learn how on  &nbsp; 
+          <a href="https://github.com/gojutin/styled-logs">GitHub</a>.
+        </h2>
       </div>
       );
     }

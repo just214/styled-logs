@@ -14,7 +14,7 @@ import AnnotatedSource from './components/AnnotatedSource';
 const StyledRoutes = styled.div`
   background: #FFF;
   color: #333;
-  padding: 10px;
+  padding: 25px;
   height: auto;
 `;
 

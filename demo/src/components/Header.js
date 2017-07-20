@@ -3,6 +3,11 @@ import styled from 'styled-components';
 import { ButtonOutline, Heading, Small, Banner } from 'rebass';
 import { Link, withRouter } from 'react-router-dom';
 
+const MainBanner = styled(Banner)`
+  height: 300px;
+  min-height: 300px;
+`;
+
 const Wrapper = styled.div`
   text-align: center;
   padding: 20px;
@@ -21,17 +26,17 @@ const Title = Heading.extend`
 `;
 
 const Header = _=>
-  <Banner
+  <MainBanner
     color='#333'
     bg='white'
     backgroundImage='bg.jpg'
   >
     <Wrapper>
-      <Title f={[5,5,7]}>
-        <img src="styled-logs-caret.png" alt="styled-logs logo" width={100} />
+      <Title f={[5,6,7]}>
+        <img src="styled-logs-caret.png" alt="styled-logs logo" width={90} />
         &nbsp; styled-logs
       </Title>
-      <Tagline>Styled console statements with CSS and modern JavaScript</Tagline>
+      <Tagline>Styled console.logs with modern JavaScript</Tagline>
       <Small color="white"> ~25 lines of JavaScript and 0 dependencies</Small>
       <br />
       <br />
@@ -50,7 +55,9 @@ const Header = _=>
           color="white"
         />
       </Link>
+      <br />
+      <br />
     </Wrapper>
-  </Banner>
+  </MainBanner>
 
 export default withRouter(Header);
