@@ -1,7 +1,7 @@
 {
   "name": "styled-logs-demo",
   "description": "Styled console.logs with modern JavaScript",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "private": false,
   "devDependencies": {
     "react-scripts": "1.0.10"
