@@ -4,7 +4,7 @@ import { ButtonOutline, Heading, Small, Banner } from 'rebass';
 import { Link, withRouter } from 'react-router-dom';
 
 const MainBanner = styled(Banner)`
-  height: 300px;
+  height: 60vh;
   min-height: 300px;
 `;
 
