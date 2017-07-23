@@ -8,10 +8,7 @@ styled-logs</h1>
 
 inspired by  <a href="https://www.styled-components.com/" target="_blank"><img src="https://raw.githubusercontent.com/styled-components/brand/master/styled-components.png" height=75/></a>
  
- <h4><a href="http://styled-logs.surge.sh" target="_blank">
-Try the interactive demo!
-</a>
-</h4>
+ #### [Try the interactive demo!](https://styled-logs.com)
  
 ## table of contents
 
@@ -203,7 +200,7 @@ Open your browser and visit `http://localhost:3000`
  
  <h4>Please use with caution.</h4>
  
- This library is brand new and has not been exhaustively tested. At this time, it in unknown which browsers support styled console statements, but they appear to work in newer versions of Chome and FireFox.
+ This library is brand new and has not been exhaustively tested. At this time, it in unknown which browsers support styled console statements, but they appear to work in newer versions of Chome and FireFox. This library does not work for server log statements as styled console statements are not supported in the terminal. 
  
  Due to the limitations outlined above, results may vary. 
  
@@ -212,7 +209,6 @@ Open your browser and visit `http://localhost:3000`
  Below is a list of ideas and plans for future releases. 
  
 - style various portions of a console statement individually in the same tagged template literal
-- compatibility with logging libraries
 - extensive list of supported styles and browsers
 - more examples in the interactive demo
 - tests
