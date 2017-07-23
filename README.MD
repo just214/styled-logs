@@ -147,7 +147,7 @@ const log3 = styled.log`
 ```
 
 <h2 id="limitations">Limitations</h2>
-There is limited documentation on the tagging functionality that allows us to style the console's output. We have found that there are several limitations with the CSS but have bot extensively tested it. We will do our best to update this list as we make new discoveries.
+There is limited documentation on the tagging functionality that allows us to style the console's output. We have found that there are several limitations with the CSS but have not extensively tested it. We will do our best to update this list as we make new discoveries.
 
 **animations**
 
