@@ -8,7 +8,7 @@ export default `
   2. An \`exposedMethods\` array is created, which contains the name of each method of the global console object that this library will expose.
 
   3. The \`exposedMethods\` array is mapped over using JavaScript's \`Array.map\` method. 
-  A new property is created for each method name, which returns an anonymous arrow function that takes two arguments:
+  A new property is created on the \`styled\` object for each method name, which returns an arrow function that accepts two arguments:
 
      - \`strings\`- an array of all of the string values in the template literal seperated by expression. 
      - \`values\`- each expression included in the template literal in sequential order.

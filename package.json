@@ -1,8 +1,22 @@
 {
   "name": "styled-logs",
-  "version": "0.0.6",
+  "version": "0.0.10",
   "description": "Styled console.logs with modern JavaScript",
+  "homepage": "https://styled-logs.com",
   "main": "index.js",
   "author": "Justin Wilkerson @gojutin",
-  "license": "MIT"
+  "license": "MIT",
+    "keywords": [
+    "console",
+    "console.log",
+    "styled",
+    "react",
+    "css",
+    "css-in-js",
+    "styled-logs"
+  ],
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/gojutin/styled-logs.git"
+  }
 }

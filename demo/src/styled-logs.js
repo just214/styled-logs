@@ -27,7 +27,7 @@ const reconstruct = (strings, values) => {
     )
     return false;
   })
-  return messageArray.join("");
+  return messageArray.join();
 };
 
 module.exports =  styled;

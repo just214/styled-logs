@@ -1,7 +1,8 @@
 {
   "name": "styled-logs-demo",
   "description": "Styled console.logs with modern JavaScript",
-  "version": "0.0.6",
+  "version": "0.0.10",
+  "homepage": "https://github.com/gojutin/styled-logs",
   "private": false,
   "devDependencies": {
     "react-scripts": "1.0.10"

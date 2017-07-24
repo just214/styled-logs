@@ -2,13 +2,13 @@
 styled-logs</h1>
 </span>
 
-#### Styled console.logs with modern JavaScript
+### Styled console.logs with modern JavaScript
 
 ~25 lines of JavaScript and 0 dependencies
 
-inspired by  <a href="https://www.styled-components.com/" target="_blank"><img src="https://raw.githubusercontent.com/styled-components/brand/master/styled-components.png" height=75/></a>
+inspired by <a href="https://www.styled-components.com/" target="_blank"><img src="https://raw.githubusercontent.com/styled-components/brand/master/styled-components.png" height=70/></a>
  
- #### [Try the interactive demo!](https://styled-logs.com)
+#### [Try the interactive demo!](https://styled-logs.com)
  
 ## table of contents
 
@@ -60,7 +60,7 @@ log`I am a styled log statement!`;
 
 The `styled` object exposes four of the global console methods:
 
-`log`, `warn`,  `error` and `info` 
+`log`, `warn`, `error` and `info` 
 
 The latter three methods provide icons and additional styling provided by the brower.
 
@@ -121,6 +121,7 @@ styled.log`color: green;``I am a green console statement!`
 Adding dynamic styles and rendering logic to your styled-log methods is simple. You can include variables or expressions anywhere in your style declaration as long as it returns a properly formatted string. 
 
 *This also applies to any console statements that are executed.*
+
 ```javascript
 const show = true;
 const bg = "orange";
@@ -167,25 +168,25 @@ const logWithBorder = styledLog.extend`border: 2px solid blue;`
 ```
 
 <h2 id="syntax">Syntax Highlighting</h2>
-The <a href="https://www.styled-components.com/" target="_blank"><img src="https://raw.githubusercontent.com/styled-components/brand/master/styled-components.png" height=50/></a> team has been hard at working on providing syntax highlighting in several different text editors. Find out more about what they are doing on the [styled-components GitHub page](https://github.com/styled-components/styled-components)
+The [styled-components](https://www.styled-components.com/) team has been hard at working on providing syntax highlighting in several different text editors. Find out more about what they are doing on the [styled-components GitHub page](https://github.com/styled-components/styled-components).
 
 All of the syntax highlighters that they provide should work for **styled-logs** since we are also accepting CSS syntax via a template literal. 
 
- <h2 id="ttl">Tagged Template Literals</h2>
+<h2 id="ttl">Tagged Template Literals</h2>
  
- If you have never invoked a function with a template literal, it may look a little strange. `log`, `warn` and `error` are all methods of the `styled` object, but we are invoking them using the template literal syntax:
+If you have never invoked a function with a template literal, it may look a little strange. `log`, `warn` and `error` are all methods of the `styled` object, but we are invoking them using the template literal syntax:
  
- ```javascript
- styled.log`color: blue;`
- ```
+```javascript
+styled.log`color: blue;`
+```
  
 Turns out, this is a completely valid way of executing a JavaScript function. We are _tagging_ the template literal with a function that is able to parse the string and any of its expressions (and variables). The tag function, when invoked with a template literal, will receive as arguments the template literal broken out into an array of strings along with all of its individual expressions and variables in sequential order. 
  
- Learn more about tagged template literals
- <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals/" target="_blank">from MDN</a> or from <a href="https://www.styled-components.com/docs/advanced#tagged-template-literals" target="_blank">from styled-components</a>.
+Learn more about tagged template literals
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals/" target="_blank">from MDN</a> or from <a href="https://www.styled-components.com/docs/advanced#tagged-template-literals" target="_blank">from styled-components</a>.
 
 
- <h2 id="demo">Run the demo locally</h2>
+<h2 id="demo">Run the demo locally</h2>
 
 ```sh
 $ git clone git@github.com:gojutin/styled-logs.git
@@ -195,18 +196,17 @@ $ yarn start (or npm start)
 ```
 Open your browser and visit `http://localhost:3000`
 
-
- <h2 id="disclaimer">Disclaimer (please read)</h2>
+<h2 id="disclaimer">Disclaimer (please read)</h2>
  
- <h4>Please use with caution.</h4>
+#### Please use with caution.
  
- This library is brand new and has not been exhaustively tested. At this time, it in unknown which browsers support styled console statements, but they appear to work in newer versions of Chome and FireFox. This library does not work for server log statements as styled console statements are not supported in the terminal. 
+This library is brand new and has not been exhaustively tested. At this time, it in unknown which browsers support styled console statements, but they appear to work in newer versions of Chome and FireFox. This library does not work for server log statements as styled console statements are not supported in the terminal. 
  
- Due to the limitations outlined above, results may vary. 
+Due to the limitations outlined above, results may vary. 
  
- <h2 id="roadmap">Roadmap</h2>
+<h2 id="roadmap">Roadmap</h2>
  
- Below is a list of ideas and plans for future releases. 
+Below is a list of ideas and plans for future releases. 
  
 - style various portions of a console statement individually in the same tagged template literal
 - extensive list of supported styles and browsers

@@ -84,6 +84,7 @@ export const argyleBG = styled.log`
     padding: 20px;
 `;
 
+
 export const embossed = styled.log`
     background: #333;
     padding: 10px;
@@ -93,6 +94,38 @@ export const embossed = styled.log`
     color: #333;
     opacity: 0.4;
     font: 700 80px 'Bitter';
+`;
+
+export const checkeredBG = styled.log`
+    background: 
+    linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0,
+    linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, #ECEDDC 25%, transparent 25%),
+    linear-gradient(45deg, #ECEDDC 25%, transparent 25%);	
+    background-size: 10px 10px;
+    background-color: #EC173A;
+    font-size: 35px;
+    color: #000;
+    font-weight: bold;
+    font-family: cursive;
+    padding: 5px;
+    text-shadow: 1px 1px 1px white;
+`;
+
+export const starryNight = styled.log`
+    background-color:black;
+    background-image:
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+    background-size: 200px 200px, 250px 350px, 250px 250px, 150px 150px; 
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+    font-size: 50px;
+    color: #fff;
+    padding: 20px 0px;
+    font-family: monospace;
+    text-shadow: 1px 1px 1px white;
 `;
 
 export const gradient = styled.log`
@@ -105,3 +138,29 @@ export const gradient = styled.log`
     padding: 20px;
 `;
 
+export const brickBG = styled.log`
+    background-color: silver;
+    background-image: linear-gradient(335deg, #b00 23px, transparent 23px),
+    linear-gradient(155deg, #d00 23px, transparent 23px),
+    linear-gradient(335deg, #b00 23px, transparent 23px),
+    linear-gradient(155deg, #d00 23px, transparent 23px);
+    background-size: 58px 58px;	
+    background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+    font-size: 40px;
+    padding: 20px;
+    font-weight: bold;
+`;
+
+export const bradyBunch = styled.log`
+    background-image:
+    radial-gradient(closest-side, transparent 0%, transparent 75%, #B6CC66 76%, #B6CC66 85%, #EDFFDB 86%, #EDFFDB 94%, #FFFFFF 95%, #FFFFFF 103%, #D9E6A7 104%, #D9E6A7 112%, #798B3C 113%, #798B3C 121%, #FFFFFF 122%, #FFFFFF 130%, #E0EAD7 131%, #E0EAD7 140%),
+    radial-gradient(closest-side, transparent 0%, transparent 75%, #B6CC66 76%, #B6CC66 85%, #EDFFDB 86%, #EDFFDB 94%, #FFFFFF 95%, #FFFFFF 103%, #D9E6A7 104%, #D9E6A7 112%, #798B3C 113%, #798B3C 121%, #FFFFFF 122%, #FFFFFF 130%, #E0EAD7 131%, #E0EAD7 140%);
+    background-size: 110px 110px;
+    background-color: #C8D3A7;
+    background-position: 0 0, 55px 55px;
+    font-size: 35px;
+    font-weight: bold;
+    padding: 25px 0px;
+    color: rgb(228, 37, 226);
+    font-family: cursive;
+`;

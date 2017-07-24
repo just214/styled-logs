@@ -115,13 +115,24 @@ const codeSample = `
         <CopyButton onClick={() => this.copy(codeSample)}>
           <FaCopy /> &nbsp; { this.state.copiedMessage }
         </CopyButton>
+
         <CodeExample code={codeSample} copy={copy} />
-        <h2 
+        <p 
           style={{textAlign: "center", color: "#333"}}
         >
-          Create and extend styled console methods. Make them dynamic with expressions. Learn how on  &nbsp; 
+          <b>Create and extend styled console methods. Make them dynamic with expressions. Learn how on &nbsp;</b>
           <a href="https://github.com/gojutin/styled-logs">GitHub</a>.
-        </h2>
+        </p>
+
+        <h5 style={{textAlign: "center", color: "#333"}}>
+          Big thanks to &nbsp;
+          <small>
+            <a href="http://lea.verou.me/css3patterns/" target="_blank" rel=" noopener noreferrer">
+            http://lea.verou.me/css3patterns/
+            </a>
+          </small> 
+          &nbsp; for the awesome collection of CSS patterns!
+        </h5>
       </div>
       );
     }
