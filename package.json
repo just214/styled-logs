@@ -1,12 +1,13 @@
 {
   "name": "styled-logs",
-  "version": "0.0.10",
+  "version": "0.1.0",
   "description": "Styled console.logs with modern JavaScript",
   "homepage": "https://styled-logs.com",
-  "main": "index.js",
-  "author": "Justin Wilkerson @gojutin",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Justin Wilkerson <gojutin@gmail.com>",
   "license": "MIT",
-    "keywords": [
+  "keywords": [
     "console",
     "console.log",
     "styled",
@@ -15,8 +16,20 @@
     "css-in-js",
     "styled-logs"
   ],
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/gojutin/styled-logs.git"
+  "scripts": {
+    "test": "jest --watchAll",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gojutin/styled-logs.git"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.6",
+    "@types/node": "^11.9.4",
+    "jest": "^24.1.0",
+    "parcel-bundler": "^1.11.0",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.3"
   }
 }
