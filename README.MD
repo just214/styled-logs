@@ -4,13 +4,16 @@
 
 ### Styled console.logs with modern JavaScript
 
-~0 dependencies
+ [![Build Status](https://travis-ci.com/gojutin/styled-logs.svg?branch=master)](https://travis-ci.com/gojutin/styled-logs) [![npm version](https://badge.fury.io/js/styled-logs.svg)](https://badge.fury.io/js/styled-logs) ![npm](https://img.shields.io/npm/dt/styled-logs.svg)  ![NPM](https://img.shields.io/npm/l/styled-logs.svg) ![npm bundle size](https://img.shields.io/bundlephobia/min/styled-logs.svg)
 
-Rewritten written in TypeScrip.
+
+Zero dependencies
+
+Rewritten in TypeScript (types included)
 
 Heavily inspired by [styled-components](https://www.styled-components.com/)
 
-#### [Try the interactive demo!](https://styled-logs.com)
+#### [Try the Interactive Demo!](https://styled-logs.com)
 
 
 Styled console statements are an experimental feature with limited browser support and even more limited documentation. Style rules do not always work as expected. Due to these limitations, results may vary. **Please use with caution.**
@@ -21,13 +24,13 @@ Styled console statements are an experimental feature with limited browser suppo
 
 
 ## Basic Usage
-Simply create a **styled log** and use it anywhere you would like.
+Simply create a styled-log and use it anywhere you would like.
 
 ```javascript
 
 import styled from 'styled-logs';
 
-// Create a new styled-logs method 
+// Create a new styled-log
 // and style it with CSS using a tagged template literal
 
 const Log = styled.log`
@@ -38,14 +41,14 @@ const Log = styled.log`
   padding: 5px;
 `;
 
-// Now use your new styled-logs method
+// Now use your new styled-log
 
 Log('🎉 Yay!');
 
 ```
-The `styled` method exposes four of the global console methods as properties of the method:
+The `styled` method exposes three of the global console methods as properties of the method:
 
-`log`, `warn`, `error` and `info`
+`log`, `warn`, and `error` 
 
 ``` javascript
 const ErrorLog = styled.error`
@@ -56,7 +59,7 @@ const ErrorLog = styled.error`
 
 The latter three methods provide icons and additional styling provided by the browser:
 
-![Styled-Logs Icon](https://res.cloudinary.com/gojutin/image/upload/v1550801477/console-screenshot.png)
+![Browser Console screenshot](https://res.cloudinary.com/gojutin/image/upload/v1550858634/styled-logs/console.png)
 
 
 ## Extending From Styles
@@ -122,7 +125,7 @@ const  SecondLog = styled(FirstLog)`
 `;
 ```
 
-<h2 id="syntax">Syntax Highlighting</h2>
+## Syntax Highlighting
 
 Any syntax highlighting extension that works for [styled-components](https://www.styled-components.com/) should work for this library as well.
 
@@ -136,24 +139,5 @@ styled.log`color: blue;`
 
 Turns out, this is a completely valid way of executing a JavaScript function. We are _tagging_ the template literal (string) with a function that is able to parse the string and any of its expressions (and variables). The tag function, when invoked with a template literal, will receive as arguments the template literal broken out into an array of strings along with all of its individual expressions and variables in sequential order.
 
-Learn more about tagged template literals
+Learn more about tagged template literals from [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals/) or [styled-components](https://www.styled-components.com/docs/advanced#tagged-template-literals).
 
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals/"  target="_blank">from MDN</a> or from <a href="https://www.styled-components.com/docs/advanced#tagged-template-literals"  target="_blank">from styled-components</a>.
-
- 
-<h2 id="demo">Run the demo locally</h2>
-
- 
-```sh
-
-$ git clone git@github.com:gojutin/styled-logs.git
-
-$ cd styled-logs/demo
-
-$ yarn install (or npm install)
-
-$ yarn start (or npm start)
-
-```
-
-Open your browser and visit `http://localhost:3000`

@@ -25,6 +25,7 @@ function reconstruct(strings, values) {
     });
     return messageArray.join(" ");
 }
+exports.reconstruct = reconstruct;
 function init(methodName, style) {
     function executionFunction(strings) {
         var values = [];
@@ -50,6 +51,7 @@ function init(methodName, style) {
     executionFunction.methodName = methodName;
     return executionFunction;
 }
+exports.init = init;
 var style;
 // { log: string, warn: string, info: string,error: string}
 function styled(previousStyle) {

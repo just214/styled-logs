@@ -1,4 +1,10 @@
 declare type MaybeStringArray = string[] | Function[] | any[] | undefined[];
+declare function reconstruct(strings: TemplateStringsArray | string, values: MaybeStringArray): string | TemplateStringsArray;
+declare function init(methodName: string, style: string): {
+    (strings: string | TemplateStringsArray, ...values: MaybeStringArray): void;
+    style: string;
+    methodName: string;
+};
 declare function styled(previousStyle?: any): ((strings: TemplateStringsArray, ...values: MaybeStringArray) => {
     (strings: string | TemplateStringsArray, ...values: MaybeStringArray): void;
     style: string;
@@ -26,4 +32,5 @@ declare namespace styled {
         methodName: string;
     };
 }
+export { reconstruct, init };
 export default styled;

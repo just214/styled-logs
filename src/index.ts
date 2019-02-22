@@ -82,6 +82,8 @@ styled.error = (strings: TemplateStringsArray, ...values: MaybeStringArray) => {
   return init('log', `${reconstruct(strings, values)}`);
 };
 
+export { reconstruct, init }
+
 
 export default styled;
 

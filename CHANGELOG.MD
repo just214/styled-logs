@@ -1,3 +1,7 @@
+## 0.1.5
+- Added more tests.
+- Added Travis CI and README badges.
+
 ## 0.1.3
 - Updated Typescript typings for tagged template literal...again.
 

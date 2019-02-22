@@ -18,6 +18,7 @@
   ],
   "scripts": {
     "test": "jest --watchAll",
+    "test:coverage": "jest --coverage",
     "build": "tsc"
   },
   "repository": {
