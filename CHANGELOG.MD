@@ -1,4 +1,7 @@
-## 02/21/2019
+## 0.1.1
+- Updated to commonjs build.
+
+## 0.1.0
 
 - Rewrote in TypeScript
 - Added tests
