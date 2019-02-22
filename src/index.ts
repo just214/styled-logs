@@ -1,7 +1,6 @@
-type MaybeString = string[] | string;
 type MaybeStringArray = string[] | Function[] | any[] | undefined[];
 
-function reconstruct(strings: MaybeString , values: MaybeStringArray) {
+function reconstruct(strings: TemplateStringsArray, values: MaybeStringArray) {
   /*
    * strings could be
    * 1. an array of strings
@@ -30,7 +29,7 @@ function reconstruct(strings: MaybeString , values: MaybeStringArray) {
 }
 
 function init(methodName: string, style: string) {
-  function executionFunction(strings: MaybeString, ...values: MaybeStringArray) {
+  function executionFunction(strings: TemplateStringsArray, ...values: MaybeStringArray) {
     const text = reconstruct(strings, values);
     console = console || window.console;
     switch(methodName) {
@@ -52,12 +51,12 @@ function init(methodName: string, style: string) {
 }
 
 let style: (previousStyle?: any) => 
-  (strings: MaybeString, ...values: MaybeStringArray) => void
+  (strings: TemplateStringsArray, ...values: MaybeStringArray) => void
     // { log: string, warn: string, info: string,error: string}
 
  function styled (previousStyle?: any) {
   if (previousStyle) {
-    return (strings: MaybeString, ...values: MaybeStringArray) => {
+    return (strings: TemplateStringsArray, ...values: MaybeStringArray) => {
       return init(
         previousStyle.methodName,
         `${previousStyle.style} ${reconstruct(strings,values)}`
@@ -67,19 +66,19 @@ let style: (previousStyle?: any) =>
 }
 
 
-styled.log = (strings: MaybeString , ...values: MaybeStringArray) => {
+styled.log = (strings: TemplateStringsArray, ...values: MaybeStringArray) => {
   return init('log', `${reconstruct(strings, values)}`);
 };
 
-styled.info = (strings: MaybeString , ...values: MaybeStringArray) => {
+styled.info = (strings: TemplateStringsArray, ...values: MaybeStringArray) => {
   return init('log', `${reconstruct(strings, values)}`);
 };
 
-styled.warn = (strings: MaybeString , ...values: MaybeStringArray) => {
+styled.warn = (strings: TemplateStringsArray, ...values: MaybeStringArray) => {
   return init('log', `${reconstruct(strings, values)}`);
 };
 
-styled.error = (strings: MaybeString , ...values: MaybeStringArray) => {
+styled.error = (strings: TemplateStringsArray, ...values: MaybeStringArray) => {
   return init('log', `${reconstruct(strings, values)}`);
 };
 

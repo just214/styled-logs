@@ -1,3 +1,6 @@
+## 0.1.2
+- Updated Typescript typings for tagged template literal.
+
 ## 0.1.1
 - Updated to commonjs build.
 

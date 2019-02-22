@@ -4,12 +4,13 @@
 
 ### Styled console.logs with modern JavaScript
 
-~Tiny library with 0 dependencies
+~0 dependencies
+
+Rewritten written in TypeScrip.
 
 Heavily inspired by [styled-components](https://www.styled-components.com/)
 
 #### [Try the interactive demo!](https://styled-logs.com)
-
 
 
 Styled console statements are an experimental feature with limited browser support and even more limited documentation. Style rules do not always work as expected. Due to these limitations, results may vary. **Please use with caution.**
