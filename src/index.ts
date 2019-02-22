@@ -1,6 +1,6 @@
 type MaybeStringArray = string[] | Function[] | any[] | undefined[];
 
-function reconstruct(strings: TemplateStringsArray, values: MaybeStringArray) {
+function reconstruct(strings: TemplateStringsArray | string, values: MaybeStringArray) {
   /*
    * strings could be
    * 1. an array of strings
@@ -29,7 +29,7 @@ function reconstruct(strings: TemplateStringsArray, values: MaybeStringArray) {
 }
 
 function init(methodName: string, style: string) {
-  function executionFunction(strings: TemplateStringsArray, ...values: MaybeStringArray) {
+  function executionFunction(strings: TemplateStringsArray | string, ...values: MaybeStringArray) {
     const text = reconstruct(strings, values);
     console = console || window.console;
     switch(methodName) {

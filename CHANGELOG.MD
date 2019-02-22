@@ -1,3 +1,6 @@
+## 0.1.3
+- Updated Typescript typings for tagged template literal...again.
+
 ## 0.1.2
 - Updated Typescript typings for tagged template literal.
 
