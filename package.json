@@ -1,6 +1,6 @@
 {
   "name": "styled-logs",
-  "version": "0.1.0",
+  "version": "0.0.10",
   "description": "Styled console.logs with modern JavaScript",
   "homepage": "https://styled-logs.com",
   "main": "dist/index.js",
