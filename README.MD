@@ -35,7 +35,6 @@ import styled from 'styled-logs';
 
 const Log = styled.log`
   color: purple;
-  font-size: 3em;
   background: yellow;
   border: 2px solid purple;
   padding: 5px;
@@ -141,3 +140,4 @@ Turns out, this is a completely valid way of executing a JavaScript function. We
 
 Learn more about tagged template literals from [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals/) or [styled-components](https://www.styled-components.com/docs/advanced#tagged-template-literals).
 
+Enjoy!
