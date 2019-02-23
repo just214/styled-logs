@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function reconstruct(strings, values) {
+function reconstruct(literals, placeholders) {
     /*
      * strings could be
      * 1. an array of strings
@@ -13,26 +13,26 @@ function reconstruct(strings, values) {
      * - an array of both strings and functions
      */
     // * If strings is of type string, values should be undefined.
-    if (!Array.isArray(strings))
-        return strings;
-    var messageArray = [];
-    strings.forEach(function (str, i) {
+    if (!Array.isArray(literals))
+        return literals;
+    var result = [];
+    literals.forEach(function (str, i) {
         if (str)
-            messageArray.push(str);
-        if (values && values[i])
-            messageArray.push(typeof values[i] === "function" ? values[i]() : values[i]);
+            result.push(str);
+        if (placeholders && placeholders[i])
+            result.push(typeof placeholders[i] === "function" ? placeholders[i]() : placeholders[i]);
         return false;
     });
-    return messageArray.join(" ");
+    return result.join(" ");
 }
 exports.reconstruct = reconstruct;
 function init(methodName, style) {
-    function executionFunction(strings) {
-        var values = [];
+    function executionFunction(literals) {
+        var placeholders = [];
         for (var _i = 1; _i < arguments.length; _i++) {
-            values[_i - 1] = arguments[_i];
+            placeholders[_i - 1] = arguments[_i];
         }
-        var text = reconstruct(strings, values);
+        var text = reconstruct(literals, placeholders);
         console = console || window.console;
         switch (methodName) {
             case 'log':
@@ -52,45 +52,37 @@ function init(methodName, style) {
     return executionFunction;
 }
 exports.init = init;
-var style;
-// { log: string, warn: string, info: string,error: string}
 function styled(previousStyle) {
     if (previousStyle) {
-        return function (strings) {
-            var values = [];
+        return function (literals) {
+            var placeholders = [];
             for (var _i = 1; _i < arguments.length; _i++) {
-                values[_i - 1] = arguments[_i];
+                placeholders[_i - 1] = arguments[_i];
             }
-            return init(previousStyle.methodName, previousStyle.style + " " + reconstruct(strings, values));
+            return init(previousStyle.methodName, previousStyle.style + " " + reconstruct(literals, placeholders));
         };
     }
+    return false;
 }
-styled.log = function (strings) {
-    var values = [];
+styled.log = function (literals) {
+    var placeholders = [];
     for (var _i = 1; _i < arguments.length; _i++) {
-        values[_i - 1] = arguments[_i];
+        placeholders[_i - 1] = arguments[_i];
     }
-    return init('log', "" + reconstruct(strings, values));
+    return init('log', "" + reconstruct(literals, placeholders));
 };
-styled.info = function (strings) {
-    var values = [];
+styled.warn = function (literals) {
+    var placeholders = [];
     for (var _i = 1; _i < arguments.length; _i++) {
-        values[_i - 1] = arguments[_i];
+        placeholders[_i - 1] = arguments[_i];
     }
-    return init('log', "" + reconstruct(strings, values));
+    return init('log', "" + reconstruct(literals, placeholders));
 };
-styled.warn = function (strings) {
-    var values = [];
+styled.error = function (literals) {
+    var placeholders = [];
     for (var _i = 1; _i < arguments.length; _i++) {
-        values[_i - 1] = arguments[_i];
+        placeholders[_i - 1] = arguments[_i];
     }
-    return init('log', "" + reconstruct(strings, values));
-};
-styled.error = function (strings) {
-    var values = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        values[_i - 1] = arguments[_i];
-    }
-    return init('log', "" + reconstruct(strings, values));
+    return init('log', "" + reconstruct(literals, placeholders));
 };
 exports.default = styled;

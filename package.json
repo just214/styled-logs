@@ -1,7 +1,7 @@
 {
   "name": "styled-logs",
   "version": "0.1.5",
-  "description": "Styled console.logs with modern JavaScript",
+  "description": "Styled console statements with modern JavaScript",
   "homepage": "https://styled-logs.com",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,7 +15,8 @@
     "styled-logs"
   ],
   "scripts": {
-    "test": "jest --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "build": "(rm -rf dist || true) && tsc"
   },

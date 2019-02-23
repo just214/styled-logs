@@ -2,7 +2,7 @@
 
 # styled-logs
 
-### Styled console.logs with modern JavaScript
+### Styled console statements with modern JavaScript
 
  [![Build Status](https://travis-ci.com/gojutin/styled-logs.svg?branch=master)](https://travis-ci.com/gojutin/styled-logs) [![npm version](https://badge.fury.io/js/styled-logs.svg)](https://badge.fury.io/js/styled-logs) ![npm](https://img.shields.io/npm/dt/styled-logs.svg)  ![NPM](https://img.shields.io/npm/l/styled-logs.svg) ![npm bundle size](https://img.shields.io/bundlephobia/min/styled-logs.svg)
 

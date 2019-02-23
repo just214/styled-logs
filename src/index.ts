@@ -1,6 +1,4 @@
-type MaybeStringArray = string[] | Function[] | any[] | undefined[];
-
-function reconstruct(strings: TemplateStringsArray | string, values: MaybeStringArray) {
+function reconstruct(literals: TemplateStringsArray | string, placeholders: any[]) {
   /*
    * strings could be
    * 1. an array of strings
@@ -14,23 +12,23 @@ function reconstruct(strings: TemplateStringsArray | string, values: MaybeString
    */
 
   // * If strings is of type string, values should be undefined.
-  if (!Array.isArray(strings)) return strings;
+  if (!Array.isArray(literals)) return literals;
 
-  let messageArray: string[] = [];
-  strings.forEach((str, i) => {
-    if (str) messageArray.push(str);
-    if (values && values[i])
-      messageArray.push(
-        typeof values[i] === "function" ? values[i]() : values[i]
+  let result: string[] = [];
+  literals.forEach((str, i) => {
+    if (str) result.push(str);
+    if (placeholders && placeholders[i])
+    result.push(
+        typeof placeholders[i] === "function" ? placeholders[i]() : placeholders[i]
       );
     return false;
   });
-  return messageArray.join(" ");
+  return result.join(" ");
 }
 
 function init(methodName: string, style: string) {
-  function executionFunction(strings: TemplateStringsArray | string, ...values: MaybeStringArray) {
-    const text = reconstruct(strings, values);
+  function executionFunction(literals: TemplateStringsArray | string, ...placeholders: any[]) {
+    const text = reconstruct(literals, placeholders);
     console = console || window.console;
     switch(methodName) {
       case 'log':
@@ -50,36 +48,41 @@ function init(methodName: string, style: string) {
   return executionFunction;
 }
 
-let style: (previousStyle?: any) => 
-  (strings: TemplateStringsArray, ...values: MaybeStringArray) => void
-    // { log: string, warn: string, info: string,error: string}
+type StyledLog = (literals: TemplateStringsArray, ...placeholders: string[]) 
+  => (methodName: string, style: string) 
+  => (literals: TemplateStringsArray, ...placeholders: string[]) 
+  => any;
 
- function styled (previousStyle?: any) {
-  if (previousStyle) {
-    return (strings: TemplateStringsArray, ...values: MaybeStringArray) => {
-      return init(
-        previousStyle.methodName,
-        `${previousStyle.style} ${reconstruct(strings,values)}`
-      );
-    };
-  }
+interface Styled {
+  log: StyledLog;
+  warn: StyledLog;
+  error: StyledLog;
 }
 
 
-styled.log = (strings: TemplateStringsArray, ...values: MaybeStringArray) => {
-  return init('log', `${reconstruct(strings, values)}`);
+ function styled<Styled>(previousStyle?: any) {
+  if (previousStyle) {
+    return (literals: TemplateStringsArray, ...placeholders: string[]) => {
+      return init(
+        previousStyle.methodName,
+        `${previousStyle.style} ${reconstruct(literals,placeholders)}`
+      );
+    };
+  }
+  return false;
+}
+
+
+styled.log = (literals: TemplateStringsArray, ...placeholders: string[]) => {
+  return init('log', `${reconstruct(literals, placeholders)}`);
 };
 
-styled.info = (strings: TemplateStringsArray, ...values: MaybeStringArray) => {
-  return init('log', `${reconstruct(strings, values)}`);
+styled.warn = (literals: TemplateStringsArray, ...placeholders: string[]) => {
+  return init('log', `${reconstruct(literals, placeholders)}`);
 };
 
-styled.warn = (strings: TemplateStringsArray, ...values: MaybeStringArray) => {
-  return init('log', `${reconstruct(strings, values)}`);
-};
-
-styled.error = (strings: TemplateStringsArray, ...values: MaybeStringArray) => {
-  return init('log', `${reconstruct(strings, values)}`);
+styled.error = (literals: TemplateStringsArray, ...placeholders: string[]) => {
+  return init('log', `${reconstruct(literals, placeholders)}`);
 };
 
 export { reconstruct, init }

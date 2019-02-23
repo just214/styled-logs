@@ -1,33 +1,27 @@
-declare type MaybeStringArray = string[] | Function[] | any[] | undefined[];
-declare function reconstruct(strings: TemplateStringsArray | string, values: MaybeStringArray): string | TemplateStringsArray;
+declare function reconstruct(literals: TemplateStringsArray | string, placeholders: any[]): string | TemplateStringsArray;
 declare function init(methodName: string, style: string): {
-    (strings: string | TemplateStringsArray, ...values: MaybeStringArray): void;
+    (literals: string | TemplateStringsArray, ...placeholders: any[]): void;
     style: string;
     methodName: string;
 };
-declare function styled(previousStyle?: any): ((strings: TemplateStringsArray, ...values: MaybeStringArray) => {
-    (strings: string | TemplateStringsArray, ...values: MaybeStringArray): void;
+declare function styled<Styled>(previousStyle?: any): false | ((literals: TemplateStringsArray, ...placeholders: string[]) => {
+    (literals: string | TemplateStringsArray, ...placeholders: any[]): void;
     style: string;
     methodName: string;
-}) | undefined;
+});
 declare namespace styled {
-    var log: (strings: TemplateStringsArray, ...values: MaybeStringArray) => {
-        (strings: string | TemplateStringsArray, ...values: MaybeStringArray): void;
+    var log: (literals: TemplateStringsArray, ...placeholders: string[]) => {
+        (literals: string | TemplateStringsArray, ...placeholders: any[]): void;
         style: string;
         methodName: string;
     };
-    var info: (strings: TemplateStringsArray, ...values: MaybeStringArray) => {
-        (strings: string | TemplateStringsArray, ...values: MaybeStringArray): void;
+    var warn: (literals: TemplateStringsArray, ...placeholders: string[]) => {
+        (literals: string | TemplateStringsArray, ...placeholders: any[]): void;
         style: string;
         methodName: string;
     };
-    var warn: (strings: TemplateStringsArray, ...values: MaybeStringArray) => {
-        (strings: string | TemplateStringsArray, ...values: MaybeStringArray): void;
-        style: string;
-        methodName: string;
-    };
-    var error: (strings: TemplateStringsArray, ...values: MaybeStringArray) => {
-        (strings: string | TemplateStringsArray, ...values: MaybeStringArray): void;
+    var error: (literals: TemplateStringsArray, ...placeholders: string[]) => {
+        (literals: string | TemplateStringsArray, ...placeholders: any[]): void;
         style: string;
         methodName: string;
     };
