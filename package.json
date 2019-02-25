@@ -1,11 +1,13 @@
 {
   "name": "styled-logs",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Styled console statements with modern JavaScript",
   "homepage": "https://styled-logs.com",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "types": "dist/index.d.ts",
   "author": "Justin Wilkerson <gojutin@gmail.com>",
   "license": "MIT",
@@ -23,7 +25,6 @@
     "build": "npm run test && npm run clean && rollup -c",
     "clean": "rm -rf ./dist && mkdir dist",
     "watch": "rollup -cw"
-
   },
   "repository": {
     "type": "git",
