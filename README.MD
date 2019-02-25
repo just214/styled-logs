@@ -9,29 +9,39 @@
 
 Zero dependencies
 
-Rewritten in TypeScript (types included)
+Written in TypeScript (types included)
 
 Heavily inspired by [styled-components](https://www.styled-components.com/)
 
 #### [Try the Interactive Demo!](https://styled-logs.com)
 
-
 Styled console statements are an experimental feature with limited browser support and even more limited documentation. Style rules do not always work as expected. Due to these limitations, results may vary. **Please use with caution.**
 
- 
 ## Installation
 `yarn add styled-logs` or `npm i styled-logs`
 
+## Basic Example
 
-## Basic Usage
-Simply create a styled-log and use it anywhere you would like.
+```javascript
+import styled from 'styled-logs';
+
+const Log = styled.log`
+  color: purple;
+  background: yellow;
+`;
+
+Log("I am a styled-log!")
+```
+
+## Usage
+
+### Create your styled-log
+This is done using a tagged templated literal to write your CSS styles. 
 
 ```javascript
 
 import styled from 'styled-logs';
 
-// Create a new styled-log
-// and style it with CSS using a tagged template literal
 
 const Log = styled.log`
   color: purple;
@@ -40,11 +50,8 @@ const Log = styled.log`
   padding: 5px;
 `;
 
-// Now use your new styled-log
-
-Log('🎉 Yay!');
-
 ```
+
 The `styled` method exposes three of the global console methods as properties of the method:
 
 `log`, `warn`, and `error` 
@@ -60,8 +67,25 @@ The latter three methods provide icons and additional styling provided by the br
 
 ![Browser Console screenshot](https://res.cloudinary.com/gojutin/image/upload/v1550858634/styled-logs/console.png)
 
+### Use your styled-log
+This is done using a tagged templated literal to write your CSS styles. 
+The `styled` method exposes three of the global console methods as properties of the method:
 
-## Extending From Styles
+```javascript
+  Log('🎉 Yay!');
+```
+
+You can optionally use a tagged template literal, which can be used to pass dynamic values. 
+
+```javascript
+  let name = "LIJS";
+  Log`Hello ${name}!`;
+  
+  // This also works
+  Log(`Hello ${name}!`);
+```
+
+### Extend your styled-log
 You can also create a styled-log by extending from the styles of a previously defined instance. You do this by passing a previously defined instance to the `styled` method as an argument followed by your new styles in a tagged template literal. The styles will be merged and in the event of a conflict, the latest style will always be applied.
 
 ```javascript
@@ -78,7 +102,7 @@ const ExtendedLog  = styled(Log)`
 ExtendedLog('🎉 Yay...extended!')
 ```
 
-## Dynamic Styles
+### Creating Dynamic Styles
 Adding dynamic styles is simple. You can include variables or expressions anywhere in your style declaration as long as they return a properly formatted string.
 
 ```javascript
@@ -106,7 +130,6 @@ As if the syntax above is not weird enough, you can also define and execute a st
 ```javascript
 styled.log`color: green;`('I am a green console statement!')
 ```
-  
 
 ## Syntax
 

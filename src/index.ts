@@ -1,19 +1,24 @@
-function reconstruct(literals: TemplateStringsArray | string, placeholders: any[]) {
-  /*
-   * strings could be
-   * 1. an array of strings
-   * 2. a string
-   *
-   * values could be
-   * - undefined
-   * - an array of strings
-   * - an array of functions (that return a string)
-   * - an array of both strings and functions
-   */
+type StyledLog = (literals: TemplateStringsArray, ...placeholders: string[]) => Function;
+type Reconstruct = (literals: TemplateStringsArray | string,  placeholders: string[] ) => string;
+type Init = (methodName: string, style: string) => ExecutionFunction;
 
-  // * If strings is of type string, values should be undefined.
-  if (!Array.isArray(literals)) return literals;
+interface Styled  {
+  (previousStyle?: any): any;
+  log: StyledLog;
+  warn: StyledLog;
+  error: StyledLog;
+}
 
+interface ExecutionFunction {
+  (literals: TemplateStringsArray | string, ...placeholders: any[]): any;
+  style: string;
+  methodName: string;
+}
+
+const reconstruct: Reconstruct = (literals: TemplateStringsArray | string, placeholders: any[]): string => {
+  if (typeof literals === 'string') {
+    return literals;
+  }
   let result: string[] = [];
   literals.forEach((str, i) => {
     if (str) result.push(str);
@@ -26,67 +31,44 @@ function reconstruct(literals: TemplateStringsArray | string, placeholders: any[
   return result.join(" ");
 }
 
-function init(methodName: string, style: string) {
-  function executionFunction(literals: TemplateStringsArray | string, ...placeholders: any[]) {
-    const text = reconstruct(literals, placeholders);
-    console = console || window.console;
-    switch(methodName) {
-      case 'log':
-      return console.log("%c%s", style, text);
-      case 'info':
-      return console.info("%c%s", style, text);
-      case 'warn':
-      return console.warn("%c%s", style, text);
-      case 'error':
-      return console.error("%c%s", style, text);
-      default:
-      return console.log("%c%s", style, text);
+
+const init: Init = (methodName: string, style: string): ExecutionFunction => {
+  const executionFunction: ExecutionFunction = Object.assign(
+    (literals: TemplateStringsArray | string, ...placeholders: any[]): void => {
+      const text = reconstruct(literals, placeholders);
+      let Console: any = console || window.console;
+      Console[methodName]("%c%s", style, text);
+    },
+    {
+      style,
+      methodName
     }
-  }
-  executionFunction.style = style;
-  executionFunction.methodName = methodName;
+  );
   return executionFunction;
-}
-
-type StyledLog = (literals: TemplateStringsArray, ...placeholders: string[]) 
-  => (methodName: string, style: string) 
-  => (literals: TemplateStringsArray, ...placeholders: string[]) 
-  => any;
-
-interface Styled {
-  log: StyledLog;
-  warn: StyledLog;
-  error: StyledLog;
-}
-
-
- function styled<Styled>(previousStyle?: any) {
-  if (previousStyle) {
-    return (literals: TemplateStringsArray, ...placeholders: string[]) => {
-      return init(
-        previousStyle.methodName,
-        `${previousStyle.style} ${reconstruct(literals,placeholders)}`
-      );
-    };
-  }
-  return false;
-}
-
-
-styled.log = (literals: TemplateStringsArray, ...placeholders: string[]) => {
-  return init('log', `${reconstruct(literals, placeholders)}`);
 };
 
-styled.warn = (literals: TemplateStringsArray, ...placeholders: string[]) => {
-  return init('log', `${reconstruct(literals, placeholders)}`);
-};
-
-styled.error = (literals: TemplateStringsArray, ...placeholders: string[]) => {
-  return init('log', `${reconstruct(literals, placeholders)}`);
-};
-
-export { reconstruct, init }
-
+const styled: Styled = Object.assign(
+  (previousStyle?: any) => {
+    if (previousStyle) {
+      return (literals: TemplateStringsArray, ...placeholders: string[]) => {
+        return init(
+          previousStyle.methodName,
+          `${previousStyle.style} ${reconstruct(literals, placeholders)}`
+        );
+      };
+    }
+  },
+  {
+    log: (literals: TemplateStringsArray, ...placeholders: string[]): Init => {
+      return init("log", `${reconstruct(literals, placeholders)}`);
+    },
+    warn: (literals: TemplateStringsArray, ...placeholders: string[]): Init => {
+      return init("warn", `${reconstruct(literals, placeholders)}`);
+    },
+    error: (literals: TemplateStringsArray, ...placeholders: string[]): Init => {
+      return init("error", `${reconstruct(literals, placeholders)}`);
+    }
+  },
+);
 
 export default styled;
-

@@ -1,3 +1,7 @@
+## 0.1.6 - 0.1.7
+- Fixed type definition bugs.
+- Updated README documentation.
+
 ## 0.1.5
 - Added more tests.
 - Added Travis CI and README badges.

@@ -4,6 +4,8 @@
   "description": "Styled console statements with modern JavaScript",
   "homepage": "https://styled-logs.com",
   "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": ["dist"],
   "types": "dist/index.d.ts",
   "author": "Justin Wilkerson <gojutin@gmail.com>",
   "license": "MIT",
@@ -18,7 +20,10 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "build": "(rm -rf dist || true) && tsc"
+    "build": "npm run test && npm run clean && rollup -c",
+    "clean": "rm -rf ./dist && mkdir dist",
+    "watch": "rollup -cw"
+
   },
   "repository": {
     "type": "git",
@@ -28,6 +33,8 @@
     "@types/jest": "^24.0.6",
     "@types/node": "^11.9.4",
     "jest": "^24.1.0",
+    "rollup": "^1.2.3",
+    "rollup-plugin-typescript2": "^0.19.2",
     "ts-jest": "^24.0.0",
     "typescript": "^3.3.3"
   }

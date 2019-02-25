@@ -1,6 +1,10 @@
 
 /node_modules
 /src
+/.rpt2_cache
+/jest.config.js
+/tsconfig.json
+/rollup.config.js
 
 # misc
 .DS_Store
@@ -8,6 +12,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.travis.yml
 
 npm-debug.log*
 yarn-debug.log*
