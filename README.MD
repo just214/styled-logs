@@ -1,4 +1,4 @@
-![Styled-Logs Icon](https://res.cloudinary.com/gojutin/image/upload/w_300/v1550798794/styled-logs-icon.png)
+![Styled-Logs Icon](https://res.cloudinary.com/gojutin/image/upload/w_300/v1550798794/styled-logs/styled-logs-icon.png)
 
 # styled-logs
 
